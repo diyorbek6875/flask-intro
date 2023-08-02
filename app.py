@@ -6,7 +6,8 @@ app = Flask(__name__)
 def hello():
     data = request.values
     print(data)
-    return "Hello world"
+    
+    return {"sum":15}
 
 @app.route('/form')
 def query():
