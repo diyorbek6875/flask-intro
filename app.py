@@ -2,22 +2,13 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api/sum")
 def hello():
     data = request.values
-    print(data)
+    print(data['a'])
     
-    return {"sum":15}
-
-
-
-
-
-
-'''
-hello world
-'''
-@app.route('/form')
+    return {"sum":int(data['a'])+int(data['b'])}
+@app.route('/')
 def query():
     html = """
     <form action="http://127.0.0.1:5000/">
